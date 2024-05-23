@@ -4429,6 +4429,11 @@ html [class*='section-'].section-bottom-0 {
 	}
 }
 
+b {
+	font-weight: 800;
+	color: var(--secondary-color);
+}
+
 .section-main-bunner:after {
 	content: '';
 	z-index: 10;
