@@ -2267,7 +2267,12 @@ input:-webkit-autofill ~ .form-validation {
 .form-wrap + * {
 	margin-top: 20px;
 }
-
+.form-wrapbutton-group {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+}
 .form-input {
 	display: block;
 	width: 100%;
@@ -2283,6 +2288,30 @@ input:-webkit-autofill ~ .form-validation {
 	-webkit-appearance: none;
 	transition: .3s ease-in-out;
 	border: 1px solid #C4C4C4;
+}
+
+.button-group {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.amount-button {
+	background-color: #f57c00;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+}
+
+.amount-button.active {
+	background-color: #d35400;
 }
 
 .form-input:focus {
@@ -4813,6 +4842,62 @@ b {
 		padding-top: 25px;
 		padding-bottom: 25px;
 	}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 40%;
+	height: fit-content;
+	padding: 20px;
+
+	h3 {
+		color: #ef7a13;
+		margin: auto;
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		label {
+			width: 100%;
+			font-size: 16px;
+		}
+	}
+}
+
+.modal-header {
+	display: flex;
+}
+
+.close-btn {
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	top: -10px;
+	right: 10px;
+	position: absolute;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 @media (min-width: 1200px) {

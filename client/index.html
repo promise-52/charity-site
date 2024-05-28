@@ -13,6 +13,34 @@
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <b class="close-btn">&times;</b>
+        <h3 class="rd-nav-item">Пожертвование</h3>
+        <form id="donationForm" class="rd-form rd-mailform">
+          <div class="form-wrap">
+            <label class="form-label" for="description">Описание</label>
+            <input class="form-input" type="text" id="description" name="description" maxlength="128" required>
+          </div>
+          <div class="form-wrapbutton-group">
+            <button type="button" class="amount-button" data-amount="500">500 рублей</button>
+            <button type="button" class="amount-button" data-amount="1000">1000 рублей</button>
+            <button type="button" class="amount-button" data-amount="1500">1500 рублей</button>
+        </div>
+          <div class="form-wrap">
+            <label class="form-label" for="amount"></label>
+            <input class="form-input" type="number" id="amount" name="amount" min="1" required>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-7 col-lg-5">
+              <button class="button button-block button-lg button-primary" type="submit">
+                Перевести
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
       <div class="preloader-body">
@@ -47,9 +75,9 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Контакты</a>
                       </li>
-                    </ul><a class="button button-primary button-sm" href="#">Пожертвовать</a>
+                    </ul>
                   </div>
-                </div><a class="button button-primary button-sm" href="#">Пожертвовать</a>
+                </div><button class="button button-primary button-sm" id="donateBtn">Хочу помочь</button>
               </div>
             </div>
           </nav>

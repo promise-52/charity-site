@@ -1,4 +1,5 @@
 "use strict";
+
 (function () {
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
@@ -30,6 +31,7 @@
 
 	// Initialize scripts that require a loaded page
 	$window.on('load', function () {
+		
 		// Page loader & Page transition
 		if (plugins.preloader.length && !isNoviBuilder) {
 			pageTransition({
@@ -72,6 +74,36 @@
 	// Initialize scripts that require a finished document
 	$(function () {
 		isNoviBuilder = window.xMode;
+
+		var modal = document.getElementById('modal');
+		var btn = document.getElementById('donateBtn');
+		var closeBtn = document.getElementsByClassName('close-btn')[0];
+		
+    var amountButtons = document.querySelectorAll('.amount-button');
+    var amountInput = document.getElementById('amount');
+
+    amountButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            amountButtons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+            amountInput.value = button.dataset.amount;  // Установить сумму в инпуте формы
+        });
+    });
+
+		btn.addEventListener('click', function() {
+			modal.style.display = 'block';
+		});
+	
+		closeBtn.onclick = function() {
+			modal.style.display = 'none';
+		}
+
+		const form = document.getElementById('donationForm')
+		form.onsubmit = function() {
+			modal.style.display = 'none';
+		}
 
 		/**
 		 * @desc Attach form validation to elements
